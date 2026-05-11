@@ -1,117 +1,88 @@
 body {
-
-background-image: url("green1.jpg");
-}
-header{
-
-display: flex;
-
-align-items: center;
+    background-image: url("green1.jpg");
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-header>div{
+header {
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+}
 
-display: flex;
-
-align-items: center; }
+header .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
 
 ul {
-
-list-style: none;
-
-display: flex;
-
-color: white;
-
-font-family: Helvetica; }
-
-li {
-
-margin: 10px; }
-
-Input {
-
-width: 250px;
-
-height: 30px;
-
-border-radius: 42px;
-
-border: 1px solid #ffffff;
-
-outline: none;
-
-position: relative;
-
-transition: .3s linear;
-
-background-color: #4bff27a9;
-
-margin: 0 10px; }
-
-::placeholder {
-
-color: white;
-
-font-family: Helvetica; }
-
-p {font-size: 40;
-color: rgb(21, 255, 0);
-width: 50%;
+    list-style: none;
+    display: flex;
+    color: white;
 }
 
-.wrapper {
-  min-height: 100vh;
-  transition: background 0.5s ease; /* Плавный переход */
-  background-image: url("black.jpg")); /* Первый фон */
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: sans-serif;
+li { margin: 0 15px; }
+
+input[type="search"] {
+    width: 250px;
+    height: 30px;
+    border-radius: 42px;
+    border: 1px solid #ffffff;
+    background-color: #4bff27a9;
+    padding-left: 15px;
+    color: white;
 }
 
-/* Скрываем реальный чекбокс */
-.toggle-checkbox {
-  display: none;
+p {
+    font-size: 20px; /* Было 40, это слишком много для текста */
+    color: rgb(21, 255, 0);
+    width: 80%;
+    margin: 20px auto;
 }
 
 /* Стили тумблера */
+.wrapper {
+    min-height: 50vh;
+    transition: background 0.5s ease;
+    background-image: url("black.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+.toggle-checkbox { display: none; }
+
 .toggle-label {
-  width: 60px;
-  height: 30px;
-  background-color: #333;
-  display: block;
-  border-radius: 50px;
-  position: relative;
-  cursor: pointer;
-  border: 2px solid white;
+    width: 60px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid white;
 }
 
 .toggle-inner {
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  transition: 0.3s;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: 0.3s;
 }
 
-/* --- ГЛАВНАЯ ЧАСТЬ --- */
-
-/* Когда чекбокс нажат: меняем положение кружка в тумблере */
 .toggle-checkbox:checked + .toggle-label .toggle-inner {
-  left: 33px;
-  background-color: #f1c40f;
+    left: 33px;
+    background-color: #f1c40f;
 }
 
-/* Когда чекбокс нажат: меняем фон у wrapper */
-/* Используем :has(), если поддерживается, или меняем структуру */
 .wrapper:has(.toggle-checkbox:checked) {
-  background-image: url("yellow.png"); /* Второй фон */
+    background-image: url("yellow.png");
 }
