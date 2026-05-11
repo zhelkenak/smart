@@ -1,66 +1,93 @@
 body {
     background-image: url("green1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
-    font-family: Helvetica, Arial, sans-serif;
+    padding: 0;
 }
 
 header {
-    display: flex;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 20px;
 }
 
-header .header-container {
+.header-container {
     display: flex;
     align-items: center;
-    width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 ul {
     list-style: none;
     display: flex;
-    color: white;
+    padding: 0;
 }
 
-li { margin: 0 15px; }
+li {
+    margin: 0 15px;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
 input[type="search"] {
     width: 250px;
     height: 30px;
     border-radius: 42px;
     border: 1px solid #ffffff;
+    outline: none;
+    transition: .3s linear;
     background-color: #4bff27a9;
     padding-left: 15px;
     color: white;
 }
 
-p {
-    font-size: 20px; /* Было 40, это слишком много для текста */
-    color: rgb(21, 255, 0);
-    width: 80%;
-    margin: 20px auto;
+::placeholder {
+    color: white;
+    font-family: Helvetica;
 }
 
-/* Стили тумблера */
+.socies img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+p {
+    font-size: 20px;
+    color: rgb(21, 255, 0);
+    width: 70%;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+
 .wrapper {
     min-height: 50vh;
     transition: background 0.5s ease;
     background-image: url("black.jpg");
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 20px;
+    margin: 20px;
 }
 
-.toggle-checkbox { display: none; }
+.toggle-checkbox {
+    display: none;
+}
 
 .toggle-label {
     width: 60px;
     height: 30px;
     background-color: #333;
+    display: block;
     border-radius: 50px;
     position: relative;
     cursor: pointer;
@@ -83,6 +110,7 @@ p {
     background-color: #f1c40f;
 }
 
+/* Изменение фона при включении */
 .wrapper:has(.toggle-checkbox:checked) {
     background-image: url("yellow.png");
 }
